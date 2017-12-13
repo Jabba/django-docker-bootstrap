@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp import views
+from django.contrib.auth import views as auth_views
+from registration import views as portal_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
 urlpatterns += [
-    path('', views.index, name='index'),
+    path('',          portal_views.index,     name='index'),
+    path('dashboard', portal_views.dashboard, name='dashboard'),
+]
+
+urlpatterns += [
+    path( 'login/',  auth_views.login ),
+    path( 'logout/', auth_views.logout, {'next_page': '/login'}, name='logout' ),
 ]
