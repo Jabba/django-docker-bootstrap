@@ -19,15 +19,17 @@ from django.contrib.auth import views as auth_views
 from registration import views as portal_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path( 'admin/', admin.site.urls ),
 ]
 
 urlpatterns += [
-    path('',          portal_views.index,     name='index'),
-    path('dashboard', portal_views.dashboard, name='dashboard'),
+    path( '',          portal_views.index,     name='index' ),
+    path( 'dashboard', portal_views.dashboard, name='dashboard' ),
 ]
 
+# registration and login paths
 urlpatterns += [
     path( 'login/',  auth_views.login ),
     path( 'logout/', auth_views.logout, {'next_page': '/login'}, name='logout' ),
+    path( 'signup/', portal_views.signup, name='signup' ),
 ]
