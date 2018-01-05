@@ -1,7 +1,26 @@
-<h2>Sign up</h2>
+{% extends 'account/login_base.html' %}
+
+{% load staticfiles %}
+
+{% block page-content %}
 <form method="post">
+  <h1>Sign up</h1>
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Sign up</button>
+  <div class="clearfix"></div>
+
+  <div class="separator">
+    Back to <a href="/login" class="to_register"> Login </a>
+
+    <div class="clearfix"></div>
+    <br />
+
+    <div>
+      <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+      <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+    </div>
+  </div>
+
 </form>
-<a href="/login">Login</a>
+{% endblock page-content %}
