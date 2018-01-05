@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

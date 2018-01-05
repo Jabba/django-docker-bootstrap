@@ -12,3 +12,12 @@ services:
       - "80:80"
     depends_on:
       - db
+  postfix:
+    image: juanluisbaptiste/postfix:latest
+    expose:
+      - "25"
+    environment:
+      SMTP_SERVER: smtp.mycompany.com
+      SMTP_USERNAME: user@mycompany.com
+      SMTP_PASSWORD: changeme
+      SERVER_HOSTNAME: helpdesk.mycompany.com
