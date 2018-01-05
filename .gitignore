@@ -1,2 +1,3 @@
 *.pyc
 portal/__pycache__/*
+portal/static

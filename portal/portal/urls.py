@@ -18,14 +18,15 @@ from django.urls import path, re_path
 from django.contrib.auth import views as auth_views
 
 
-from registration import views as portal_views
+from mainapp import views as portal_views
 
 urlpatterns = [
     path( 'admin/', admin.site.urls ),
 ]
 
 urlpatterns += [
-    path( '',          portal_views.index,     name='index' ),
+    # path( '',          portal_views.index,     name='index' ),
+    path( '',          auth_views.login, { 'template_name' : 'account/login.html' }, name='login' ),
     path( 'dashboard', portal_views.dashboard, name='dashboard' ),
 ]
 
