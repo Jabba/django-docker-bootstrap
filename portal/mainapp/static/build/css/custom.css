@@ -1,22 +1,44 @@
 
 html , body{
-	
+
  height:100%;
- 
+
 }
- 
+
+.login_content label {
+  float: left;
+}
+
+.helptext {
+  float: right;
+  font-style: italic;
+  font-size: 10px;
+  margin: 0 0 20px;
+}
+
+.login_content form ul {
+  margin: -10px 0 70px;
+  list-style-type: none;
+}
+
+.login_content form ul li {
+  float: right;
+  font-style: italic;
+  font-size: 10px;
+}
+
 .full-width {
-	
+
  width:100%;
- 
+
  }
- 
+
 .full-height{
  height:100%;
  }
 
 .daterangepicker .ranges li {
-    color: #73879C
+    color: #73879C;
 }
 .daterangepicker .ranges li.active,
 .daterangepicker .ranges li:hover {
@@ -3548,7 +3570,7 @@ form:after {
     box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
     border: 1px solid #c8c8c8;
     color: #777;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     width: 100%
 }
 .login_content form input[type="text"]:focus,
@@ -4240,7 +4262,7 @@ ul.notifications {
 table thead .checkbox { margin-top:-7px;margin-top:-21px; }
 table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 */
-			
+
 .daterangepicker.xdisplay { width:228px; }
 
 .dataTables_wrapper > .row{
