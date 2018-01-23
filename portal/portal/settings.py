@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'mainapp'
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_FROM_EMAIL='noreply@domain.tld'
+EMAIL_USE_TLS=True
+EMAIL_HOST='mail'
+EMAIL_HOST_USER='user1@domain.tld'
+EMAIL_HOST_PASSWORD='mypassword'
+EMAIL_PORT=587   # also tried 25
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

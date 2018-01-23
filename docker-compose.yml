@@ -12,12 +12,32 @@ services:
       - "80:80"
     depends_on:
       - db
-  postfix:
-    image: juanluisbaptiste/postfix:latest
-    expose:
-      - "25"
+  mail:
+    image: tvial/docker-mailserver:2.1
+    hostname: mail
+    domainname: domain.com
+    container_name: mail
+    ports:
+    - "25:25"
+    - "143:143"
+    - "587:587"
+    - "993:993"
+    volumes:
+    - maildata:/var/mail
+    - mailstate:/var/mail-state
+    - ./config/:/tmp/docker-mailserver/
     environment:
-      SMTP_SERVER: smtp.mycompany.com
-      SMTP_USERNAME: user@mycompany.com
-      SMTP_PASSWORD: changeme
-      SERVER_HOSTNAME: helpdesk.mycompany.com
+    - ENABLE_SPAMASSASSIN=1
+    - ENABLE_CLAMAV=1
+    - ENABLE_FAIL2BAN=1
+    - ENABLE_POSTGREY=1
+    - ONE_DIR=1
+    - DMS_DEBUG=0
+    cap_add:
+    - NET_ADMIN
+
+volumes:
+  maildata:
+    driver: local
+  mailstate:
+    driver: local
