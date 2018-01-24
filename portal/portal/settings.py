@@ -43,12 +43,18 @@ INSTALLED_APPS = [
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-DEFAULT_FROM_EMAIL='noreply@domain.tld'
-EMAIL_USE_TLS=True
-EMAIL_HOST='mail'
-EMAIL_HOST_USER='user1@domain.tld'
-EMAIL_HOST_PASSWORD='mypassword'
-EMAIL_PORT=587   # also tried 25
+EMAIL_HOST          = 'mail'
+
+# EMAIL_HOST_USER     = 'user1@domain.tld'
+# EMAIL_HOST_PASSWORD = 'mypassword'
+# DEFAULT_FROM_EMAIL  = 'user1@domain.tld'
+
+EMAIL_HOST_USER     = open( os.path.join( BASE_DIR, "../config/email_host_user.txt" ) ).read().rstrip('\n')
+EMAIL_HOST_PASSWORD = open( os.path.join( BASE_DIR, "../config/email_host_password.txt" ) ).read().rstrip('\n')
+DEFAULT_FROM_EMAIL  = open( os.path.join( BASE_DIR, "../config/default_from_email.txt" ) ).read().rstrip('\n')
+
+EMAIL_PORT          = 587
+EMAIL_USE_TLS       = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
