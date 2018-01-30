@@ -9,6 +9,14 @@ html , body{
   float: left;
 }
 
+.errorlist {
+  float: right;
+  font-style: italic;
+  font-size: 10px;
+  margin: 0 0 20px;
+  color: red;
+}
+
 .helptext {
   float: right;
   font-style: italic;
@@ -17,12 +25,11 @@ html , body{
 }
 
 .login_content form ul {
-  margin: -10px 0 70px;
   list-style-type: none;
+  text-align: right;
 }
 
 .login_content form ul li {
-  float: right;
   font-style: italic;
   font-size: 10px;
 }
