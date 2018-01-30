@@ -28,6 +28,7 @@ urlpatterns += [
     # path( '',          portal_views.index,     name='index' ),
     path( '',          auth_views.login, { 'template_name' : 'account/login.html' }, name='login' ),
     path( 'dashboard', portal_views.dashboard, name='dashboard' ),
+    path( 'profile',   portal_views.profile,   name='profile' ),
 ]
 
 # registration and login paths

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'mainapp'
 ]
 
+LOGOUT_REDIRECT_URL = 'login'
+
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

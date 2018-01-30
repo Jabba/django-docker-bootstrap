@@ -3,6 +3,7 @@ from django.http               import HttpResponse
 from django.template           import loader
 from django.contrib.auth       import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 from mainapp.forms import SignUpForm
 
@@ -12,8 +13,15 @@ def index( request ):
     context  = {}
     return HttpResponse( template.render( context, request ) )
 
+@login_required
 def dashboard( request ):
-    template = loader.get_template( 'dashboard.html' )
+    template = loader.get_template( 'gentelella/dashboard.html' )
+    context  = {}
+    return HttpResponse( template.render( context, request ) )
+
+@login_required
+def profile( request ):
+    template = loader.get_template( 'gentelella/profile.html' )
     context  = {}
     return HttpResponse( template.render( context, request ) )
 
